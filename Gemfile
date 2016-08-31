@@ -49,8 +49,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # First we added the bootstrap gem
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # Here we add the font awesome gem for rails
 gem 'font-awesome-rails'
 
 # Here we gonna add the gem 'simple_form'
 gem 'simple_form'
+
+# Here we gonna add the a devise gem
+gem 'devise' 
