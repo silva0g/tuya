@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  # We put this line to set the task before every line 
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :change]
   # We put this line to 
   before_action :authenticate_user!
 
@@ -11,7 +13,7 @@ class TasksController < ApplicationController
     @to_do = current_user.tasks.where(state: "to_do")
     @doing = current_user.tasks.where(state: "doing")
     @done = current_user.tasks.where(state: "done")
-    respond_with(@tasks)
+    #respond_with(@tasks) Antes nao estava comentada
   end
 
   # GET /tasks/1
@@ -31,9 +33,17 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+
     @task = current_user.tasks.new(task_params)
-    @task.save
-    respond_with(@task)
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to @task, notice: 'Task was successfully created.'}
+        format.json { render :show, status: :created, location: @task }
+      else
+        format.html { render :new }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+    end  #respond_with(@task)
   end
 
   # PATCH/PUT /tasks/1
@@ -65,7 +75,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
 
-      format.html {redirect_to tasks_path, notice: "Task Update"}
+      format.html { redirect_to tasks_path, notice: "Task Update" }
     end
   end
 
