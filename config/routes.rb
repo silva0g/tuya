@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creatin: first created highest priority
   # See how all your routes lay out with "rake routes"
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
   get 'about' => "pages#about"
+
+  get 'test' => "pages#test"
 end
