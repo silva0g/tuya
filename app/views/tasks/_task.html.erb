@@ -1,8 +1,15 @@
 <div class="panel panel-info">	
 	<div class="panel-heading">
+	<!-- This is the edit task link -->
 	<%= link_to edit_task_path(task) do %>
 		Created <%= time_ago_in_words(task.created_at) %> ago 
 	<% end %>
+	<!-- / End of the edit task link -->
+
+	
+	<%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, task_path(task), method: :delete, data: {confirm: "Are you sure?"}, class: "pull-right"%>
+
+	
 	</div>
 	<div class="panel-body"><%= task.content %></div>
 	<div class="panel-footer text-center">
