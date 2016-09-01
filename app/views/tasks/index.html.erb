@@ -1,63 +1,87 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<h1>To Do</h1>
+  <div class="col-md-4"><h1 class="text-center">To Do</h1>
+  <%= render @to_do %>
+    
+    <!--<div class="panel panel-info">
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+      <div class="panel-heading">
+      Heading
+        
+      </div>
 
-  <tbody>
-    <%= render @to_do %>
-    <!-- 
-    removemos o bloco <th></th> da tabela e colocamo-los como partial na _task.html.erb -->
-  </tbody>
-</table>
+      <div class="panel-body">
+      Content
 
-<br>
 
-<h1>Doing</h1>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+      <div class="panel-footer text-center">
+      Footer
+      </div>
+    </div> -->
 
-  <tbody>
-    <%= render @doing %>
-    <!-- 
-    removemos o bloco <th> Doing </th> da tabela e colocamo-los como partial na _task.html.erb -->
-  </tbody>
-</table>
 
-<br>
+  </div>
 
-<h1>Done</h1>
+  <div class="col-md-4"><h1 class="text-center">Doing</h1>
+  <%= render @doing %>  
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+    <!--
+    <div class="panel panel-info">
+
+      <div class="panel-heading">
+      Heading
+        
+      </div>
+
+      <div class="panel-body">
+      Content
+
+
+      </div>
+
+      <div class="panel-footer text-center">
+      Footer
+      </div>
+    </div> 
+    -->
+    
+  </div>
+
+  
+
+
+  <div class="col-md-4"><h1 class="text-center">Done </h1>
     <%= render @done %>
-    <!-- 
-    removemos o bloco <th> Done </th> da tabela e colocamo-los como partial na _task.html.erb -->  
-  </tbody>
-</table>
 
-<br>
+    <!--
+    <div class="panel panel-info">
+
+      <div class="panel-heading">
+      Heading
+        
+      </div>
+
+      <div class="panel-body">
+      Content ola
+
+
+      </div>
+
+      <div class="panel-footer text-center">
+      Footer
+      </div>
+    </div>
+    -->
+
+  </div>
+  
+ </div>
+  
+</div>
+
+<br> 
 
 <%= link_to 'New Task', new_task_path %>
