@@ -22,4 +22,10 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+ # database: db/production.sqlite3
+ adapter: postgresql
+ database: todoism
+ encoding: utf8
+ min_messages: Warning
+ pool: 5
+ timeout: 500
