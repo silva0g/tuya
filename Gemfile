@@ -57,4 +57,7 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 
 # Here we gonna add the a devise gem
-gem 'devise' 
+gem 'devise'
+
+# Here I Will add the gem for auto_html
+gem 'auto_html' '~> 2.0.0'

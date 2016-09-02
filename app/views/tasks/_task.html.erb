@@ -8,9 +8,8 @@
 
 	
 	<%= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, task_path(task), method: :delete, data: {confirm: "Are you sure?"}, class: "pull-right"%>
-
-	
 	</div>
+
 	<div class="panel-body"><%= task.content %></div>
 	<div class="panel-footer text-center">
 		<div class="btn-group btn-group-justified">
